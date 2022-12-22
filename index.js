@@ -11,6 +11,11 @@ server.get('/v1/sro-rastro/:code', async (req, res) => {
     let codRastreio = [code];
     try {
         let response = await rastrearEncomendas(codRastreio)
+        
+        console.log("---------- CODE -----------")
+        console.log(response[0])
+
+        console.log("---------- EVENTS -----------")
         console.log(response[0].eventos[0])
 
         if (response[0].modalidade == "V") {
